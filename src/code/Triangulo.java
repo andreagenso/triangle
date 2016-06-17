@@ -37,9 +37,9 @@ public class Triangulo {
 		Double ladoB = lados.get(1);
 		Double ladoC = lados.get(2);
 				
-		Double anguloCAB = calcularAnguloA(ladoA, ladoB, ladoC);
-		Double anguloABC = calcularAnguloA(ladoB, ladoC, ladoA);
-		Double anguloBCA = calcularAnguloA(ladoC, ladoA, ladoB);
+		Double anguloCAB = calcularAngulo(ladoA, ladoB, ladoC);
+		Double anguloABC = calcularAngulo(ladoB, ladoC, ladoA);
+		Double anguloBCA = calcularAngulo(ladoC, ladoA, ladoB);
 		
 		angulos.add(anguloCAB);
 		angulos.add(anguloABC);
@@ -48,11 +48,12 @@ public class Triangulo {
 		return angulos;
 	}
 	
-	private Double calcularAnguloA(Double ladoA, Double ladoB, Double ladoC) {
-		Double numerador = Math.pow(ladoA, 2) - Math.pow(ladoB, 2) - Math.pow(ladoC, 2);
-		Double denominador = -2 * ladoB * ladoC;
-		Double cosenoA = Math.acos(numerador/denominador);
-		return Math.rint(Math.toDegrees(cosenoA)*100)/100;
+	private Double calcularAngulo(Double ladoCatetoOpuestoA, Double ladoCatetoAdyacenteB, Double ladoCatetoAdyacenteC) {
+		Double numerador = Math.pow(ladoCatetoOpuestoA, 2) - Math.pow(ladoCatetoAdyacenteB, 2) - 
+				Math.pow(ladoCatetoAdyacenteC, 2);
+		Double denominador = -2 * ladoCatetoAdyacenteB * ladoCatetoAdyacenteC;
+		Double arcosenoA = Math.acos(numerador/denominador);
+		return Math.rint(Math.toDegrees(arcosenoA)*100)/100;
 	}
 	
 	public ClasificacionPorLado retornarClasificacionPorLado(ArrayList<Double> lados) {
@@ -71,8 +72,7 @@ public class Triangulo {
 				return ClasificacionPorLado.ESCALENO;						
 			case 1:
 				return ClasificacionPorLado.ISOSCELES;							
-			case 2:
-				return ClasificacionPorLado.EQUILATERO;
+			case 2:				
 			case 3:	
 				return ClasificacionPorLado.EQUILATERO;				
 			default:

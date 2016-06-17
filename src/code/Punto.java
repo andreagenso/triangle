@@ -12,11 +12,7 @@ public class Punto {
 	public double calcularDistancia(Punto punto) {
 		return Math.rint(Math.sqrt(Math.pow(punto.x - this.x,2) + Math.pow(punto.y - this.y, 2))*100)/100;
 	}
-	
-	public Punto devolverPunto() {
-		return this;
-	}
-	
+		
 	public String mostrarPunto() {
 		return ("x:" + this.x + " y:" + this.y);
 	}

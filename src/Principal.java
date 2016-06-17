@@ -58,15 +58,7 @@ public class Principal {
 		
 		Triangulo trianguloIsoscelesObtusangulo = new Triangulo(p1, p2, p3);
 		trianguloIsoscelesObtusangulo.mostrarTriangulo();
-		
-		// Escaleno/acutangulo							
-		/*p1 = new Punto(2.0, -9.0);			
-		p2 = new Punto(-10.0, -17.0);		
-		p3 = new Punto(-18.0, 17.0);			
-		
-		Triangulo trianguloEscalenoAcutangulo = new Triangulo(p1, p2, p3);
-		trianguloEscalenoAcutangulo.mostrarTriangulo();*/
-						
+							
 		// Escaleno/obtusangulo		
 		p1 = new Punto(-9.0, 2.0);			
 		p2 = new Punto(-10.0, -17.0);		
